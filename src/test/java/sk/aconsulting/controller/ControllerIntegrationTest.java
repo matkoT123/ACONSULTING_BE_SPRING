@@ -131,6 +131,6 @@ public class ControllerIntegrationTest {
         ResultActions response = mockMvc.perform(delete("/api/items/1")
                 .contentType(MediaType.APPLICATION_JSON));
 
-        response.andExpect(MockMvcResultMatchers.status().isOk());
+        response.andExpect(MockMvcResultMatchers.status().isNoContent());
     }
 }

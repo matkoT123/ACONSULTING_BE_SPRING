@@ -45,8 +45,14 @@ public class ItemController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteItem(@PathVariable("id") Long id) {
-        return service.deleteItem(id);
+    public ResponseEntity deleteItem(@PathVariable("id") Long id) {
+        try {
+            service.deleteItem(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
 }

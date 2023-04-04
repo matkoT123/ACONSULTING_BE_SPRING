@@ -128,10 +128,9 @@ public class ItemService implements IItemService {
     }
 
     @Override
-    public String deleteItem(Long id) {
+    public void deleteItem(Long id) {
         Item item = repository.findById(id).orElseThrow(() -> new NotFoundException("No such id"));
         repository.delete(item);
-        return "item was deleted";
     }
 
 }

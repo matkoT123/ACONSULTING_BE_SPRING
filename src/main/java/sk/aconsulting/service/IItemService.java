@@ -11,5 +11,5 @@ public interface IItemService {
     ItemDto getItemById(Long id);
     ItemResponse getAllItems(int pageNo, int pageSize);
     ItemDto updateItem(Long id, ItemDto itemDto);
-    String deleteItem(Long id);
+    void deleteItem(Long id);
 }
